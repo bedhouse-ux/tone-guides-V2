@@ -3,7 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <title>Tone Guides — Index</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  :root {
+    --bg: #1c1712;
+    --bg-panel: #24201a;
+    --amber: #d4a24e;
+    --rust: #b5502e;
+    --cream: #ede4d3;
+    --dim: #a89a83;
+    --line: #3a332a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: Georgia, 'Iowan Old Style', serif;
+    line-height: 1.55;
+    padding: 0 0 60px;
+  }
+  header {
+    padding: 56px 24px 36px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: radial-gradient(ellipse at top, rgba(181,80,46,0.18), transparent 65%);
+  }
+  .eyebrow {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.35em;
+    font-size: 12px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(32px, 6vw, 52px);
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+    color: var(--amber);
+    text-shadow: 0 0 30px rgba(212,162,78,0.25);
+  }
+  .subtitle {
+    color: var(--dim);
+    font-size: 15px;
+    font-style: italic;
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .artist-block { margin-top: 48px; }
+  .artist-name {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 15px;
+    color: var(--rust);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  .song-card {
+    display: block;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+  .song-card:hover { border-color: var(--rust); }
+  .song-title {
+    font-size: 19px;
+    color: var(--amber);
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+  .song-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: 'Courier New', monospace;
+    font-size: 12.5px;
+    color: var(--dim);
+  }
+  .song-meta .field { display: flex; gap: 6px; align-items: baseline; }
+  .song-meta .label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rust);
+    font-size: 11px;
+  }
+  .song-meta .value { color: var(--cream); }
+  footer {
+    max-width: 780px;
+    margin: 60px auto 0;
+    padding: 20px 24px 0;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
 
@@ -51,7 +158,7 @@
     <div class="song-meta">
       <div class="field"><span class="label">Guitar</span><span class="value">Heritage H150 (neck)</span></div>
       <div class="field"><span class="label">Amp</span><span class="value">Kemper Player + FR-10</span></div>
-      <div class="field"><span class="label">Key</span><span class="value">E minor (½ step down)</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">E minor</span></div>
     </div>
   </a>
 
@@ -72,9 +179,9 @@
 </div>
 
 <div class="artist-block">
-  <div class="artist-name">DMA_S</div>
+  <div class="artist-name">DMA'S</div>
 
-  <a class="song-card" href="./DMA_S/Believe%20%E2%80%94%20Tone%20Guide.html">
+  <a class="song-card" href="./DMA'S/Believe%20%E2%80%94%20Tone%20Guide.html">
     <div class="song-title">Believe</div>
     <div class="song-meta">
       <div class="field"><span class="label">Guitar</span><span class="value">Yamaha SA2200 (neck, split)</span></div>
@@ -137,6 +244,20 @@
 </div>
 
 <div class="artist-block">
+  <div class="artist-name">Otis Redding</div>
+
+  <a class="song-card" href="./Otis%20Redding/Dock%20of%20the%20Bay%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Dock of the Bay</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">PRS McCarty (neck)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">G</span></div>
+    </div>
+  </a>
+
+</div>
+
+<div class="artist-block">
   <div class="artist-name">Pixies</div>
 
   <a class="song-card" href="./Pixies/Here%20Comes%20Your%20Man%20%E2%80%94%20Tone%20Guide.html">
@@ -145,6 +266,66 @@
       <div class="field"><span class="label">Guitar</span><span class="value">Postmodern Telecaster (middle)</span></div>
       <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
       <div class="field"><span class="label">Key</span><span class="value">D</span></div>
+    </div>
+  </a>
+
+</div>
+
+<div class="artist-block">
+  <div class="artist-name">R.E.M.</div>
+
+  <a class="song-card" href="./R.E.M./Man%20on%20the%20Moon%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Man on the Moon</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">Yamaha SA2200 (split)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">G</span></div>
+    </div>
+  </a>
+
+</div>
+
+<div class="artist-block">
+  <div class="artist-name">Radiohead</div>
+
+  <a class="song-card" href="./Radiohead/Creep%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Creep</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">Heritage H150 (bridge)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">G</span></div>
+    </div>
+  </a>
+
+  <a class="song-card" href="./Radiohead/Fake%20Plastic%20Trees%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Fake Plastic Trees</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">PRS McCarty (neck)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Kemper Player + FR-10</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">A (capo 2)</span></div>
+    </div>
+  </a>
+
+</div>
+
+<div class="artist-block">
+  <div class="artist-name">Soundgarden</div>
+
+  <a class="song-card" href="./Soundgarden/Fell%20on%20Black%20Days%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Fell on Black Days</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">Heritage H150 (bridge)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">E</span></div>
+    </div>
+  </a>
+
+  <a class="song-card" href="./Soundgarden/Spoonman%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Spoonman</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">Heritage H150 (bridge)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">Drop D</span></div>
     </div>
   </a>
 
@@ -165,6 +346,20 @@
 </div>
 
 <div class="artist-block">
+  <div class="artist-name">The Beatles</div>
+
+  <a class="song-card" href="./The%20Beatles/Day%20Tripper%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Day Tripper</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">Epiphone Elitist Casino (bridge)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">E</span></div>
+    </div>
+  </a>
+
+</div>
+
+<div class="artist-block">
   <div class="artist-name">Tokyo Tea Room</div>
 
   <a class="song-card" href="./Tokyo%20Tea%20Room/If%20You%20Love%20Her%20%E2%80%94%20Tone%20Guide.html">
@@ -178,11 +373,25 @@
 
 </div>
 
+<div class="artist-block">
+  <div class="artist-name">Wheatus</div>
+
+  <a class="song-card" href="./Wheatus/Teenage%20Dirtbag%20%E2%80%94%20Tone%20Guide.html">
+    <div class="song-title">Teenage Dirtbag</div>
+    <div class="song-meta">
+      <div class="field"><span class="label">Guitar</span><span class="value">Postmodern Telecaster (bridge)</span></div>
+      <div class="field"><span class="label">Amp</span><span class="value">Clapp 15 — Class A/B</span></div>
+      <div class="field"><span class="label">Key</span><span class="value">E</span></div>
+    </div>
+  </a>
+
+</div>
+
 </main>
 
 <footer>
   One card per song, linking through to the full pedal-by-pedal guide.<br>
-  Artist blocks are kept in alphabetical order — insert new artists in the right spot rather than appending at the end.
+  Add a new artist block whenever a new band gets its first guide.
 </footer>
 
 </body>
