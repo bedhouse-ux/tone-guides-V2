@@ -3,7 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <title>Rig Reference</title>
-<link rel="stylesheet" href="./style.css">
+<style>
+  :root {
+    --bg: #1c1712;
+    --bg-panel: #24201a;
+    --amber: #d4a24e;
+    --rust: #b5502e;
+    --cream: #ede4d3;
+    --dim: #a89a83;
+    --line: #3a332a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: Georgia, 'Iowan Old Style', serif;
+    line-height: 1.55;
+    padding: 0 0 60px;
+  }
+  header {
+    padding: 56px 24px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: radial-gradient(ellipse at top, rgba(181,80,46,0.18), transparent 65%);
+  }
+  .eyebrow {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.35em;
+    font-size: 12px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(32px, 6vw, 52px);
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+    color: var(--amber);
+    text-shadow: 0 0 30px rgba(212,162,78,0.25);
+  }
+  .subtitle {
+    color: var(--dim);
+    font-size: 15px;
+    font-style: italic;
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section { margin-top: 48px; }
+  h2 {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 14px;
+    color: var(--rust);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  h3.group-label {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    color: var(--dim);
+    margin: 28px 0 12px;
+  }
+  .card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+  }
+  .card h4 {
+    margin: 0 0 8px;
+    color: var(--amber);
+    font-size: 17px;
+  }
+  .card h4 .tag {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--amber);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .card h4 .tag.shelf {
+    background: transparent;
+    color: var(--dim);
+    border: 1px solid var(--line);
+  }
+  .card h4 .tag.new {
+    background: var(--rust);
+    color: var(--cream);
+  }
+  .card p { margin: 0; color: var(--dim); font-size: 14.5px; }
+  .card p.controls { margin-bottom: 8px; color: var(--cream); font-size: 13.5px; }
+  .card p.controls b { color: var(--amber); }
+  .amp-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .amp-specs div {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12.5px;
+  }
+  .amp-specs div b { color: var(--amber); display: block; font-size: 13px; margin-bottom: 2px; }
+  .note {
+    border-left: 3px solid var(--rust);
+    padding: 10px 16px;
+    background: rgba(181,80,46,0.08);
+    font-size: 13.5px;
+    color: var(--dim);
+    margin-top: 14px;
+  }
+  ol.workflow, ul.filenames { margin: 0; padding-left: 20px; color: var(--dim); font-size: 14.5px; }
+  ol.workflow li, ul.filenames li { margin-bottom: 8px; }
+  code {
+    font-family: 'Courier New', monospace;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--amber);
+    font-size: 13px;
+  }
+  footer {
+    max-width: 780px;
+    margin: 60px auto 0;
+    padding: 20px 24px 0;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
 
@@ -12,105 +162,203 @@
 <header>
   <div class="eyebrow">Reference</div>
   <h1>Rig Reference</h1>
-  <div class="subtitle">Guitars, pedals, and amps — the gear every tone guide is built from</div>
-  <div class="meta-row">
-    <span>Last confirmed: <b>August 2026</b></span>
-  </div>
+  <div class="subtitle">Guitars, pedals, and amps — the source data every tone guide is built from</div>
+  <div class="subtitle" style="margin-top:8px;">Last confirmed: August 2026</div>
 </header>
 
 <main>
 
 <section>
   <h2>Guitars</h2>
-  <div class="card">
-    <p style="margin-bottom:16px;">All guitars run 10-46 (String Joy) except the Taylor, which is on an unspecified acoustic set.</p>
-  </div>
+  <p style="color:var(--dim); font-size:13.5px; margin-bottom:16px;">All guitars run 10-46 (String Joy) strings, except the Taylor (acoustic set, gauge not logged).</p>
 
   <div class="card">
-    <h3>1. Postmodern Telecaster</h3>
+    <h4>Postmodern Telecaster</h4>
     <p>CuNiFe neck pickup, Nocaster '51 bridge pickup. The Nocaster bridge rates around 7.7K DC resistance / 3.7 Henries, neck around 7.9K / 2.35 Henries — period-correct single-coils delivering tight low end and clear, balanced midrange. Twangy, classic-rock-to-country bridge voicing. CuNiFe neck (cunife magnets rather than alnico) gives a fuller, slightly higher-output neck tone than a vintage-style Tele neck pickup.</p>
   </div>
 
   <div class="card">
-    <h3>2. Postmodern Stratocaster (2015)</h3>
+    <h4>Postmodern Stratocaster (2015)</h4>
     <p>Fat '60s pickup set — overwound design with beveled alnico 2 magnets, aiming for the sound of aged early-'60s pickups: warm lows, rich midrange, mellow highs. DC resistance around 6.7K, inductance 2.8 Henries across all three positions. Middle pickup is reverse-wound/reverse-polarity for hum cancelling in positions 2 and 4. Rounder and less icepick-y than a standard Strat set, with more midrange body.</p>
   </div>
 
   <div class="card">
-    <h3>3. Yamaha Revstar RS502T</h3>
-    <p>Mahogany body with maple top, mahogany neck, rosewood fingerboard, 24.75&quot; scale, 22 jumbo frets, two VP5 vintage-output P-90 pickups with Alnico V magnets, Tune-O-Matic bridge with custom aluminum tailpiece. Has the signature push-pull "Dry Switch" — a passive filter that cuts low frequencies for extra clarity and punch, giving coil-tap-like tonal shaping without actually splitting the coil. Punchy, articulate P90 voice with a useful thinning option.</p>
+    <h4>Yamaha Revstar RS502T</h4>
+    <p>Mahogany body with maple top, mahogany neck, rosewood fingerboard, 24.75" scale, 22 jumbo frets, two VP5 vintage-output P-90 pickups with Alnico V magnets, Tune-O-Matic bridge with custom aluminum tailpiece. Signature push-pull "Dry Switch" — a passive filter that cuts low frequencies for extra clarity and punch, giving coil-tap-like tonal shaping without actually splitting the coil. Punchy, articulate P90 voice with a useful thinning option.</p>
   </div>
 
   <div class="card">
-    <h3>4. Gibson Firebird (2022)</h3>
+    <h4>Gibson Firebird (2022)</h4>
     <p>Mini-humbuckers, Grover mini tuners. Mini-humbuckers are traditionally low output, sitting between single-coil clarity and full-humbucker girth — a genuinely different circuit from a full-size PAF-style humbucker (originally sized to drop into P-90 routs). Bright, articulate, slightly glassy top end with less low-end push than the H150 or McCarty — cuts through a mix without getting muddy.</p>
   </div>
 
   <div class="card">
-    <h3>5. PRS McCarty</h3>
+    <h4>PRS McCarty</h4>
     <p>58/15 LT ("low turn") pickups — vintage-inspired, designed to capture the sweetness of vintage single coils and the warmth of late-1950s humbuckers: lively and open with focused midrange and balanced treble/bass. Mahogany body, maple top, ebony fretboard, Pattern neck profile. Essentially PRS's take on a great set of old PAFs — the closest thing in the collection to a vintage Les Paul voice.</p>
   </div>
 
   <div class="card">
-    <h3>6. Heritage H150 (2023, Dirty Lemon Burst)</h3>
-    <p>Curly maple top over genuine Honduran mahogany back, Seymour Duncan '59 humbuckers (neck and bridge), wax-potted for minimal microphonic feedback — warm, thick tone with loads of sustain. 24¾&quot; scale, 12&quot; fretboard radius, Standard C neck profile. Bridge pickup with tone cranked and dirt engaged howls and snarls; neck pickup with tone rolled off gives thick humbucking warmth. Close cousin to the McCarty tonally but slightly darker/thicker, no coil-split.</p>
+    <h4>Heritage H150 (2023, Dirty Lemon Burst)</h4>
+    <p>Curly maple top over genuine Honduran mahogany back, Seymour Duncan '59 humbuckers (neck and bridge), wax-potted for minimal microphonic feedback — warm, thick tone with loads of sustain. 24¾" scale, 12" fretboard radius, Standard C neck profile. Bridge pickup with tone cranked and dirt engaged howls and snarls; neck pickup with tone rolled off gives thick humbucking warmth. Close cousin to the McCarty tonally but slightly darker/thicker, no coil-split.</p>
   </div>
 
   <div class="card">
-    <h3>7. Yamaha SA2200</h3>
+    <h4>Yamaha SA2200</h4>
     <p>Laminated sycamore body with a soft maple center block, Yamaha humbucking pickups with Alnico V magnets, mahogany neck, ebony fingerboard, Gotoh hardware. Push-pull coil-split on both tone pots, 3-way toggle. Regarded by many players as roughly 90% of an ES-335 for a fraction of the price. Semi-hollow warmth with real versatility via the coil splits — jazz-clean through to a growly 335-style crunch.</p>
   </div>
 
   <div class="card">
-    <h3>8. Epiphone Elitist Casino (2014)</h3>
+    <h4>Epiphone Elitist Casino (2014)</h4>
     <p>Made at the Terada factory in Japan, dog-ear P90s. Fully hollow body construction (no center block), which makes the P-90s highly resonant and sensitive to feedback — the same characteristic Lennon, McCartney, and Richards leaned into creatively. Excellent articulation and harmonics with a distinct mid-range character. Bright, chimey, and physically loud acoustically — best kept away from high gain/close proximity to the amp.</p>
   </div>
 
   <div class="card">
-    <h3>9. Taylor 414ce-R</h3>
-    <p>Grand Auditorium body, Indian rosewood back and sides, Sitka spruce top, V-Class bracing. Scooped midrange character with rich lows and pristine highs, sits well in arrangements with other instruments and vocals. Taylor Expression System 2 electronics, 25.5&quot; scale. Only guitar in the collection not on 10-46 String Joy strings (acoustic phosphor bronze/similar, gauge not logged here).</p>
+    <h4>Taylor 414ce-R</h4>
+    <p>Grand Auditorium body, Indian rosewood back and sides, Sitka spruce top, V-Class bracing. Scooped midrange character with rich lows and pristine highs, sits well in arrangements with other instruments and vocals. Taylor Expression System 2 electronics, 25.5" scale. Excluded from tonal comparisons in the tone guides. Only guitar not on 10-46 String Joy strings.</p>
   </div>
 </section>
 
 <section>
   <h2>Pedals</h2>
+  <p style="color:var(--dim); font-size:13.5px; margin-bottom:0;">Board: Pedaltrain Novo &nbsp;·&nbsp; Power: Friedman Power Station</p>
+
+  <h3 class="group-label">On the Board — Front Chain</h3>
+
   <div class="card">
-    <p>Board: Pedaltrain Novo &nbsp;·&nbsp; Power: Friedman Power Station</p>
+    <h4>Peterson StroboStomp <span class="tag">Board</span></h4>
+    <p>Limited Edition. Tuner.</p>
   </div>
 
   <div class="card">
-    <span class="section-tab">On the Board — Front Chain</span>
-    <p style="margin-top:14px;"><b>1. Peterson StroboStomp (Limited Edition)</b> — tuner.</p>
-    <p style="margin-top:10px;"><b>2. Walrus Audio Mira</b> — optical compressor. Controls: Level, Blend, Attack, Release, Ratio, Make-Up, plus a side-chain High Pass Filter push-button (cuts frequencies below 120Hz from triggering compression). Blend allows mixing compressed signal with dry for clarity + sustain.</p>
-    <p style="margin-top:10px;"><b>3. Wampler Tumnus Deluxe</b> — Klon-style overdrive. Controls: Volume, Gain, Bass, Mids, Treble (active EQ), plus two toggle switches — Normal/Hot (gain mode) and Buffer/True Bypass. Gain knob works as a dual-function control: turning gain up simultaneously reduces a parallel clean-blend circuit.</p>
-    <p style="margin-top:10px;"><b>4. Boss BD-2 Blues Driver</b> — overdrive. Controls: Level, Tone, Gain. Simple 3-knob layout; Tone shapes upper-mid/treble, Gain ranges from mild breakup to near-fuzz saturation.</p>
-    <p style="margin-top:10px;"><b>5. Walrus Audio 385 Overdrive MkII</b> — dual-channel overdrive inspired by a vintage film projector's tube output stage. Controls: independent A/B Gain and Volume knobs (switchable via secondary footswitch), shared Treble and Bass EQ, and a 385/385+ voicing switch (385+ adds an extra gain stage for thicker, more compressed saturation).</p>
+    <h4>Walrus Audio Mira <span class="tag">Board</span></h4>
+    <p class="controls"><b>Controls:</b> Level, Blend, Attack, Release, Ratio, Make-Up, plus a side-chain High Pass Filter push-button (cuts frequencies below 120Hz from triggering compression).</p>
+    <p>Optical compressor. Blend allows mixing compressed signal with dry for clarity + sustain.</p>
   </div>
 
   <div class="card">
-    <span class="section-tab">On the Board — Effects Loop</span>
-    <p style="margin-top:14px;"><b>6. Walrus Audio EB-10</b> — preamp/EQ/boost. Controls: Low, Mid, High rotary knobs (each with a Cut/Boost toggle, up to 12dB each), a Boost switch (+10dB MOSFET boost), and Live/Preset mode switching with 3 storable presets. Internal trim pots adjust mid-band center frequency (ships at 800Hz, Q ~1.5) and bandwidth.</p>
-    <p style="margin-top:10px;"><b>7. UAFX Brigade Chorus &amp; Vibrato</b> — modulation. Controls: Speed, Depth, Intensity, Shade, Shape, Mode knobs; switches for effect mode, Store, and A/B variation.</p>
-    <p style="margin-top:10px;"><b>8. UAFX Starlight Echo Station</b> — delay. Three onboard delay models (Tape EP-III, Analog DMM, Precision), with tap tempo, Live and Preset modes.</p>
-    <p style="margin-top:10px;"><b>9. UAFX Golden Reverberator</b> — reverb. Modeled reverb types include Fender spring-style (Dream '65-derived), EMT 140 plate, and Lexicon 224. Live and Preset modes; Decay and Predelay controls vary by selected effect.</p>
-    <p style="margin-top:10px;"><b>10. Boss RC-5</b> — looper.</p>
+    <h4>Wampler Tumnus Deluxe <span class="tag">Board</span></h4>
+    <p class="controls"><b>Controls:</b> Volume, Gain, Bass, Mids, Treble (active EQ), plus Normal/Hot (gain mode) and Buffer/True Bypass toggles.</p>
+    <p>Klon-style overdrive. Gain knob works as a dual-function control: turning gain up simultaneously reduces a parallel clean-blend circuit.</p>
   </div>
 
   <div class="card">
-    <span class="section-tab">On the Shelf</span>
-    <p style="margin-top:14px;"><b>Keeley Seafoam</b> — analog-digital chorus/vibrato. Controls: Rate, Depth, Tone, Blend. Blend dials the relationship between vibrato (fully counter-clockwise) and pure chorus (clockwise); Tone shifts the voicing from mellow/warm to bright shimmer; opto-coupler-controlled LFO gives smooth, deep modulation at slow rates. True bypass.</p>
-    <p style="margin-top:10px;"><b>Keeley Hydra</b> — stereo reverb &amp; tremolo. Reverb side: Dwell (pre-delay/early reflections), Mix (wet/dry), Color (tone-shaping, doubles as secondary-function access when held), 3-way toggle for Spring/Plate/Room. Tremolo side: Rate, Depth, 3-way toggle for Sine/Harmonic/Vibrato waveforms, tap tempo. Independent footswitches for each effect, effect order is switchable (trem→verb or verb→trem), 3 onboard presets, true or buffered trails bypass.</p>
-    <p style="margin-top:10px;"><b>Funny Little Boxes 1991 (Gold Sparkle)</b> — op-amp overdrive, voiced after Pearl Jam's debut-era tone (mid-forward, sparkly top, easy on bass). Controls: 2 Gain knobs, 3-band EQ, Volume.</p>
-    <p style="margin-top:10px;"><b>Boss DD-7</b> — digital delay. Controls: E.Level (effect level), F.Back (feedback/repeats), D.Time (delay time within the selected range), Mode knob (4 delay-time ranges — 50/200/800/3200ms — plus Hold/looper up to 40s, Modulate/chorus-like delay, Analog mode modeled on the BOSS DM-2, and Reverse). Stereo I/O, tap tempo via external footswitch, expression pedal input for real-time control of Time/Feedback/Level.</p>
-    <p style="margin-top:10px;"><b>Way Huge Swollen Pickle MK3</b> — Muff-style fuzz. Controls: Loudness, Filter (tone), Sustain (fuzz/gain) as the three main knobs; Scoop and Crunch as toggle switches on the MK3 (Scoop carves out mids for a huge/flat power-chord voicing; Crunch adjusts compression intensity of the fuzz — both switches down gives the classic 3-knob Swollen Pickle voicing).</p>
-    <p style="margin-top:10px;"><b>Mozztronics GD-1 Bonebreaker</b> — germanium-voiced overdrive, five modes. Best placed early in a chain (sensitive to input impedance, gets fizzy/undefined when stacked after other drives).</p>
-    <p style="margin-top:10px;"><b>JHS Cheese Ball</b> — multi-mode fuzz, Lovetone Big Cheese recreation with four voicings (bright/trashy, mid-scooped Muff-style, mid-boosted, biting gated fuzz). Known limitation: fairly low output, struggles to reach unity gain even at full volume.</p>
-    <p style="margin-top:10px;"><b>MXR Super Badass Distortion</b> — Controls: Output, Distortion (gain), Bass, Mid, Treble — a full 3-band active EQ rather than a single Tone knob, so it can range from low-gain '70s-style overdrive through to scooped modern metal distortion. True bypass.</p>
-    <p style="margin-top:10px;"><b>MXR FOD Drive</b> — dual-channel overdrive recreating two blended amp stacks. Controls: independent Gain/Volume for High Gain and Crunch Gain channels, Blend (mix ratio between channels), Tone, and a Scoop switch (flat/scooped/boosted midrange).</p>
-    <p style="margin-top:10px;"><b>Keeley Compressor Mini</b> — Controls: Level (output volume) and Comp (compression threshold) only — attack, release, and ratio are fixed internally. Uses parallel/auto-blend compression (dry signal passes through and sums with the compressed signal) plus an automatic tone-recovery circuit to retain high end at heavy compression settings. Unity gain typically falls around 30-40% of the Level knob's range.</p>
-    <p style="margin-top:10px;"><b>Fender Santa Ana Overdrive</b> — Controls: Drive, Bass, Middle, Treble, Presence, Output Level, Voice toggle (A/B — A is tighter/natural overdrive, B is smoother/thicker for leads), plus a Boost footswitch (mode set internally to boost either Drive or Level).</p>
-    <p style="margin-top:10px;"><b>Warm Audio Warm Bender</b> — Tone Bender MkII-style fuzz, three modes: NOS 76 (cutting, present, high-output germanium voice), NOS 75 (classic Tone Bender MkII Professional-style Beck/Ronson tone), and Silicon (smoother, more modern character), plus a SAG control for voltage-starved, sputtering textures. Standard 9V DC center-negative power. <i>Acquired August 2026.</i></p>
-    <p style="margin-top:10px;"><b>Dunlop GCB65 Cry Baby Custom Badass Dual Inductor Wah</b> — dual-inductor wah with a mushroom-style kickswitch to toggle voices. Halo inductor: authentic 60s British blues character, throaty midrange, vocal quality — the Hendrix/Clapton/Page/Beck/Knopfler reference voice. Red Fasel inductor: brighter, more aggressive, better cut-through against high-gain/fuzz signals. Separate frequency knobs per inductor. Note: as a passive wah, placing it before germanium fuzz circuits (Warm Bender, GD-1) can load down the input impedance and thin out the fuzz tone — default to placing wah after fuzz in the chain, or test fuzz-before-wah first before committing to final board position. <i>Acquired August 2026.</i></p>
+    <h4>Boss BD-2 Blues Driver <span class="tag">Board</span></h4>
+    <p class="controls"><b>Controls:</b> Level, Tone, Gain.</p>
+    <p>Simple 3-knob overdrive. Tone shapes upper-mid/treble, Gain ranges from mild breakup to near-fuzz saturation.</p>
+  </div>
+
+  <div class="card">
+    <h4>Walrus Audio 385 Overdrive MkII <span class="tag">Board</span></h4>
+    <p class="controls"><b>Controls:</b> independent A/B Gain and Volume knobs (switchable via secondary footswitch), shared Treble and Bass EQ, and a 385/385+ voicing switch.</p>
+    <p>Dual-channel overdrive inspired by a vintage film projector's tube output stage. 385+ adds an extra gain stage for thicker, more compressed saturation.</p>
+  </div>
+
+  <h3 class="group-label">On the Board — Effects Loop</h3>
+
+  <div class="card">
+    <h4>Walrus Audio EB-10 <span class="tag">Loop</span></h4>
+    <p class="controls"><b>Controls:</b> Low, Mid, High rotary knobs (each with Cut/Boost toggle, up to 12dB each), a Boost switch (+10dB MOSFET), Live/Preset mode with 3 storable presets.</p>
+    <p>Preamp/EQ/boost. Internal trim pots adjust mid-band center frequency (ships at 800Hz, Q ~1.5) and bandwidth.</p>
+  </div>
+
+  <div class="card">
+    <h4>UAFX Brigade Chorus &amp; Vibrato <span class="tag">Loop</span></h4>
+    <p class="controls"><b>Controls:</b> Speed, Depth, Intensity, Shade, Shape, Mode knobs; switches for effect mode, Store, and A/B variation.</p>
+    <p>Modulation.</p>
+  </div>
+
+  <div class="card">
+    <h4>UAFX Starlight Echo Station <span class="tag">Loop</span></h4>
+    <p class="controls"><b>Controls:</b> tap tempo, Live and Preset modes.</p>
+    <p>Delay. Three onboard models: Tape EP-III, Analog DMM, Precision.</p>
+  </div>
+
+  <div class="card">
+    <h4>UAFX Golden Reverberator <span class="tag">Loop</span></h4>
+    <p class="controls"><b>Controls:</b> Decay and Predelay (vary by selected effect), Live and Preset modes.</p>
+    <p>Reverb. Modeled types: Fender spring-style (Dream '65-derived), EMT 140 plate, Lexicon 224.</p>
+  </div>
+
+  <div class="card">
+    <h4>Boss RC-5 <span class="tag">Loop</span></h4>
+    <p>Looper.</p>
+  </div>
+
+  <h3 class="group-label">On the Shelf</h3>
+
+  <div class="card">
+    <h4>Keeley Seafoam <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> Rate, Depth, Tone, Blend.</p>
+    <p>Analog-digital chorus/vibrato. Blend dials the relationship between vibrato (fully counter-clockwise) and pure chorus (clockwise); Tone shifts the voicing from mellow/warm to bright shimmer; opto-coupler-controlled LFO gives smooth, deep modulation at slow rates. True bypass.</p>
+  </div>
+
+  <div class="card">
+    <h4>Keeley Hydra <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> Reverb side — Dwell, Mix, Color, 3-way Spring/Plate/Room toggle. Tremolo side — Rate, Depth, 3-way Sine/Harmonic/Vibrato toggle, tap tempo.</p>
+    <p>Stereo reverb & tremolo. Independent footswitches per effect, switchable effect order (trem→verb or verb→trem), 3 onboard presets, true or buffered trails bypass.</p>
+  </div>
+
+  <div class="card">
+    <h4>Funny Little Boxes 1991 (Gold Sparkle) <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> 2 Gain knobs, 3-band EQ, Volume.</p>
+    <p>Op-amp overdrive, voiced after Pearl Jam's debut-era tone (mid-forward, sparkly top, easy on bass).</p>
+  </div>
+
+  <div class="card">
+    <h4>Boss DD-7 <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> E.Level, F.Back (feedback), D.Time, Mode knob (4 time ranges — 50/200/800/3200ms — plus Hold/looper up to 40s, Modulate, Analog/DM-2 mode, Reverse).</p>
+    <p>Digital delay. Stereo I/O, tap tempo via external footswitch, expression pedal input for real-time Time/Feedback/Level control.</p>
+  </div>
+
+  <div class="card">
+    <h4>Way Huge Swollen Pickle MK3 <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> Loudness, Filter (tone), Sustain (fuzz/gain), plus Scoop and Crunch toggles.</p>
+    <p>Muff-style fuzz. Scoop carves out mids for a huge/flat power-chord voicing; Crunch adjusts fuzz compression intensity — both switches down gives the classic 3-knob Swollen Pickle voicing.</p>
+  </div>
+
+  <div class="card">
+    <h4>Mozztronics GD-1 Bonebreaker <span class="tag shelf">Shelf</span></h4>
+    <p>Germanium-voiced overdrive, five modes. Best placed early in a chain — sensitive to input impedance, gets fizzy/undefined when stacked after other drives.</p>
+  </div>
+
+  <div class="card">
+    <h4>JHS Cheese Ball <span class="tag shelf">Shelf</span></h4>
+    <p>Multi-mode fuzz, Lovetone Big Cheese recreation with four voicings.</p>
+  </div>
+
+  <div class="card">
+    <h4>MXR Super Badass Distortion <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> Output, Distortion (gain), Bass, Mid, Treble.</p>
+    <p>Full 3-band active EQ rather than a single Tone knob, so it can range from low-gain '70s-style overdrive through to scooped modern metal distortion. True bypass.</p>
+  </div>
+
+  <div class="card">
+    <h4>MXR FOD Drive <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> independent Gain/Volume for High Gain and Crunch Gain channels, Blend, Tone, Scoop switch (flat/scooped/boosted midrange).</p>
+    <p>Dual-channel overdrive recreating two blended amp stacks.</p>
+  </div>
+
+  <div class="card">
+    <h4>Keeley Compressor Mini <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> Level (output volume) and Comp (compression threshold) only — attack, release, and ratio are fixed internally.</p>
+    <p>Parallel/auto-blend compression (dry signal sums with compressed signal) plus automatic tone-recovery circuit to retain high end at heavy compression. Unity gain typically falls around 30-40% of the Level knob's range.</p>
+  </div>
+
+  <div class="card">
+    <h4>Fender Santa Ana Overdrive <span class="tag shelf">Shelf</span></h4>
+    <p class="controls"><b>Controls:</b> Drive, Bass, Middle, Treble, Presence, Output Level, Voice toggle (A/B), plus a Boost footswitch.</p>
+    <p>Voice A is tighter/natural overdrive, B is smoother/thicker for leads. Boost footswitch mode (Drive or Level) is set internally.</p>
+  </div>
+
+  <div class="card">
+    <h4>Warm Audio Warm Bender <span class="tag new">New — In Transit</span></h4>
+    <p>Tone Bender MkII-style fuzz, three NOS germanium/silicon modes.</p>
+  </div>
+
+  <div class="card">
+    <h4>Walrus Audio Luminary V2 <span class="tag new">New — In Transit</span></h4>
+    <p class="controls"><b>Controls:</b> four independent octave-level knobs (-2, -1, +1, +2), Dry/Wet blend, Attack, Filter, Flutter. Three onboard presets plus Live mode, expression pedal input, Smart Momentary Bypassing.</p>
+    <p>Polyphonic quad octave generator, capable of stacking four octaves simultaneously rather than a single-voice pitch shift, running on the Analog Devices SHARC platform for fast, clean tracking. Dry/Wet: below 12 o'clock keeps the octave signal subtle under the dry guitar, above it the octaves dominate. Attack dictates how fast the octaves swell in after picking — low/off for immediate response, higher for a gradual bloom. Filter is a low-pass cutoff on the octave signal that doubles as an envelope-type effect at higher settings. Flutter applies tremolo depth/rate to the octaves, off at zero. Expression input is assignable to octave levels, Attack, Flutter, and/or Dry/Wet in combination.</p>
   </div>
 </section>
 
@@ -118,63 +366,77 @@
   <h2>Amps</h2>
 
   <div class="card">
-    <h3>Frost Amplification Clapp 15</h3>
-    <p>Hand-built, Hobart/Margate, Tasmania (Tim Krushka). 1x12&quot; Class A push-pull combo with a genuine Constant Current Source (CCS) keeping the output stage true Class A — most "Class A" push-pull amps are actually A/B without a CCS.</p>
-    <p style="margin-top:10px;"><b>Controls:</b> Class A / Class A-B switch (Class A limits output to 9W with more compression/sag and earlier breakup; Class A/B unlocks the full 15W) · Bass, Mid, Treble (standard 3-band EQ) · Bass Defeat switch (bypasses the 3-band EQ for a hairier, louder, more open voicing with sparklier highs and more punch) · Bright switch (boosts treble at lower volumes) · Pre-Amp Gain and Master Volume, independently controllable · Tremolo (footswitchable, tube-driven) · Effects Loop for loop-based pedals (EB-10, Brigade, Starlight, Golden Reverberator, RC-5 in the current setup).</p>
-    <p style="margin-top:10px;"><b>Circuit notes:</b> Cascode preamp input stage (cascaded triode) — gives Vox/pentode-style dynamics and vibrancy without the feedback/microphony issues real pentode preamps suffer. 12AX7 and 12AU7 preamp valves, EL84 (or Russian 6P14P) output valves. Single channel, no built-in reverb. 12&quot; lightweight neodymium speaker on-board.</p>
+    <h4>Frost Amplification Clapp 15</h4>
+    <p style="margin-bottom:10px;">Hand-built, Hobart/Margate, Tasmania (Tim Krushka). 1x12" Class A push-pull combo with a genuine Constant Current Source (CCS) keeping the output stage true Class A — most "Class A" push-pull amps are actually A/B without a CCS.</p>
+    <p class="controls"><b>Controls:</b> Class A / Class A-B switch (Class A limits output to 9W, more compression/sag; A/B unlocks the full 15W) · Bass, Mid, Treble (3-band EQ) · Bass defeat switch (bypasses the 3-band EQ for a hairier, louder, more open voicing) · Bright switch (boosts treble at lower volumes) · Pre-Amp Gain and Master Volume, independently controllable · Tremolo (front panel or footswitch) · Effects Loop (hosts EB-10, Brigade, Starlight, Golden Reverberator, RC-5).</p>
+    <p>Cascode preamp input stage gives Vox/pentode-style dynamics without the feedback/microphony issues real pentode preamps suffer. 12AX7 and 12AU7 preamp valves, EL84 (or Russian 6P14P) output valves. Single channel, no built-in reverb. 12" lightweight neodymium speaker on-board.</p>
   </div>
 
   <div class="card">
-    <h3>Quilter Aviator Cub</h3>
-    <p>Solid-state (Quilter's amp-modeling power/preamp technology), 1x12&quot; combo, 50W into a custom Quilter/Eminence-designed 12&quot; speaker. Single-channel architecture, but with three separate input jacks, each voiced after a different vintage Fender combo — you plug into the input matching the voice you want rather than switching a toggle.</p>
-    <p style="margin-top:10px;"><b>Voices (selected by input jack):</b> Tweed (late-1950s tweed combo — fat, honest, pre-tone-stack character with plenty of gain on tap for rich overdrive) · Blonde (early-1960s blonde/brown combo — wider treble boost, clear bell-like tone, more headroom/cleaner than Tweed) · Blackface (1965 black-panel combo — scooped mids, sweet silky highs, full bass, often considered the benchmark clean American tone, holds up well pushed into overdrive too).</p>
-    <p style="margin-top:10px;"><b>Controls:</b> Gain (preamp drive level) · Bass, Middle, Treble (active 3-band EQ, notably strong action — Bass affects everything below ~500Hz, most aggressive below 200Hz) · Limiter/threshold (a "soft ceiling" that caps overdrive tones without killing sustain — unusual on a combo, effectively built-in dynamic control) · Reverb (single-knob level, onboard digital) · Master/Speaker Volume (power-amp stage output, independent of preamp gain) · SIG OUT (headphone and balanced Line Out volume, separate from speaker) · Effects Loop (send/return, mono).</p>
-    <p style="margin-top:10px;"><b>Notes:</b> Lightweight (21.5 lbs) and full-range/flat power section — the "amp" character comes entirely from the three voiced preamp inputs, not from tube sag or output-stage coloration, so it behaves more predictably at any volume than the Clapp 15. Good clean/low-gain pedal platform, especially via the Blackface input for headroom or Tweed input for pre-broken-up grit.</p>
+    <h4>Quilter Aviator Cub</h4>
+    <p style="margin-bottom:10px;">Solid-state (Quilter's amp-modeling power/preamp technology), 1x12" combo, 50W into a custom Quilter/Eminence-designed 12" speaker. Three separate input jacks, each voiced after a different vintage Fender combo — plug into the input matching the voice you want.</p>
+    <div class="amp-specs">
+      <div><b>Tweed</b>Late-1950s tweed. Fat, honest, pre-tone-stack, plenty of gain for rich overdrive.</div>
+      <div><b>Blonde</b>Early-1960s blonde/brown. Wider treble boost, clear bell-like tone, more headroom than Tweed.</div>
+      <div><b>Blackface</b>1965 black-panel. Scooped mids, sweet silky highs, full bass — benchmark clean American tone.</div>
+    </div>
+    <p class="controls"><b>Controls:</b> Gain · Bass, Middle, Treble (active EQ — Bass affects everything below ~500Hz, most aggressive below 200Hz) · Limiter/threshold ("soft ceiling" that caps overdrive without killing sustain) · Reverb (single-knob level) · Master/Speaker Volume, independent of preamp gain · SIG OUT (headphone/balanced line out level) · Effects Loop (send/return, mono).</p>
+    <p>Lightweight (21.5 lbs), full-range/flat power section — the amp character comes entirely from the three voiced preamp inputs, not tube sag or output-stage coloration, so it behaves more predictably at any volume than the Clapp 15. Good clean/low-gain pedal platform, especially via Blackface for headroom or Tweed for pre-broken-up grit.</p>
   </div>
 
   <div class="card">
-    <h3>Kemper Profiler Player (Level 3)</h3>
-    <p>Digital amp/effects profiler in a compact, pedalboard-style unit — not a physical tube or solid-state amp itself, but outputs into an FRFR speaker, powered cab, PA, or headphones/interface. Uses Kemper's profiling technology to reproduce captured "fingerprints" of real amps rather than modeled approximations — a genuinely different approach from conventional digital modelers.</p>
-    <p style="margin-top:10px;"><b>Level 3 upgrade specifically adds:</b> the full effects roster used on the larger Kemper Profiler models, including the acclaimed Kemper Drive and Kemper Fuzz types (Fuzz Drive System, covering Fuzz Face and Octavia-style voicings among others), Studio Equalizer, Widener and Shaper effect families, Pedal Pitch plus Chromatic and Harmonic Pitch effects, Quad Delays and the full Pitch Delay family, advanced Natural Reverb plus Cirrus and Ionosphere Reverbs, and more — each with associated permanent effect presets. Also unlocks a larger pool of Performance slots, morphing features, and expanded preset/rig management versus the base Level 1 unit.</p>
-    <p style="margin-top:10px;"><b>Controls:</b> Two assignable footswitch-adjacent knobs for quick effect parameter access, each doubling as a push-button to toggle between two assigned parameters (e.g. gain and volume of an overdrive) · Bluetooth and Wi-Fi activation, both can run simultaneously (Bluetooth supports play-along audio) · Row of 6 buttons for Bank/Rig selection with multi-colour indicator LEDs · Tap tempo/tuner button · Multi-colour input-level LED · 3 dedicated tuner LEDs · 3 footswitches (left/right navigate rigs, centre assignable to a specific function such as activating an effect) · Built-in tuner, transpose/pitch feature, USB audio for direct recording, MIDI support, expression pedal input. Deep editing happens via Rig Manager software (Windows/macOS) — the Player's onboard interface is deliberately minimal by design.</p>
-    <p style="margin-top:10px;"><b>Notes:</b> Profiles (not simulations) of real amps, cabs, and mics — tone accuracy is generally rated very high, with the caveat that profiled EQ behaviour won't always respond like the real amp's controls would if pushed far from where it was originally profiled. Best paired with a genuine FRFR speaker (see FR-10 below) for accurate reproduction.</p>
+    <h4>Kemper Player (Level 3)</h4>
+    <p style="margin-bottom:10px;">Digital amp/effects profiler in a compact pedalboard-style unit — outputs into an FRFR speaker, powered cab, PA, or headphones/interface. Uses Kemper's profiling technology to reproduce captured "fingerprints" of real amps rather than modeled approximations.</p>
+    <p class="controls"><b>Level 3 adds:</b> the full signal chain used on the larger Profiler models — doubles effects modules from 4 to 8, adds a Parallel Path (splittable/dual signal routing), Morphing, more Performance slots, expanded preset/rig management. GAIN knob LED collar glows blue at Level 3 (green = Level I, red = Level II).</p>
+    <p class="controls"><b>Controls:</b> two assignable footswitch-adjacent knobs (each doubles as a push-button to toggle two assigned parameters) · Bluetooth and Wi-Fi (can run simultaneously) · 6-button Bank/Rig selection row · tap tempo/tuner button · multi-colour input-level LED · 3 tuner LEDs · 3 footswitches (prev/next rig, one assignable) · built-in tuner, transpose/pitch, USB audio, MIDI, expression pedal input.</p>
+    <p>Deep editing lives in Rig Manager software (Windows/macOS) — the Player's onboard interface is deliberately minimal. Profiles are generally rated very high for tone accuracy, with the caveat that profiled EQ won't always respond like the real amp's controls if pushed far from where it was profiled. Best paired with a genuine FRFR speaker (the FR-10 below) for accurate reproduction.</p>
   </div>
 
   <div class="card">
-    <h3>Fender Tone Master FR-10 (FRFR powered speaker)</h3>
-    <p>Powered, full-range, flat-response speaker designed to reproduce exactly what the Kemper Player sends it without adding its own amp/cab coloration — unlike a traditional guitar cab or combo. This is the playback partner for the Kemper Player rig, not a tone source in its own right.</p>
-    <p style="margin-top:10px;"><b>Specs:</b> 1,000W Class-D power amp · 10&quot; special-design low-frequency driver plus a 1&quot; wide-dispersion high-frequency compression driver · Frequency response 75Hz–20kHz (-3dB), usable range 58Hz–20kHz (-10dB) · Max output 130dB · Weight ~25.6 lbs (11.6kg) · Lightweight plywood enclosure, black vinyl covering with silver grille cloth, industrial design styled after classic Fender amps.</p>
-    <p style="margin-top:10px;"><b>Controls:</b> Volume, Treble, Middle, Bass, and a High-Frequency Cut control — a 3-band active EQ plus HF cut, used to fine-tune room/stage sound without touching the Kemper's own line/PA output. One combo input (balanced 1/4&quot;/XLR), one XLR line out with ground lift, integrated tilt-back legs for monitoring angle.</p>
-    <p style="margin-top:10px;"><b>Notes:</b> Because it's genuinely flat/full-range, tone shaping should happen on the Kemper (profile selection, onboard EQ, effects) rather than on the FR-10 — its own EQ is there for room correction/taste, not for building the tone itself.</p>
-  </div>
-
-  <div class="card">
-    <h3>Expression Pedal</h3>
-    <p>Used with the Kemper Player's expression pedal input for real-time control of assigned parameters (wah, pitch/whammy-style effects via Pedal Pitch, volume swells, or morphing between rig states). Model not logged here.</p>
+    <h4>Fender Tone Master FR-10 (FRFR monitor)</h4>
+    <p style="margin-bottom:10px;">Powered full-range, flat-response speaker — reproduces whatever the Kemper Player sends it without adding its own amp/cab colouration. The playback partner for the Kemper Player rig, not a tone source in its own right.</p>
+    <div class="amp-specs">
+      <div><b>Power</b>1,000W Class-D</div>
+      <div><b>Drivers</b>10" LF + 1" HF compression</div>
+      <div><b>Freq. response</b>75Hz–20kHz (-3dB)</div>
+      <div><b>Max output</b>130dB</div>
+      <div><b>Weight</b>~25.6 lbs (11.6kg)</div>
+    </div>
+    <p class="controls"><b>Controls:</b> Volume, Treble, Middle, Bass, High-Frequency Cut (3-band active EQ + HF cut) · one combo input (balanced 1/4"/XLR) · one XLR line out with ground lift · integrated tilt-back legs.</p>
+    <p>Because it's genuinely flat/full-range, tone shaping should happen on the Kemper (profile, onboard EQ, effects) rather than on the FR-10 — its own EQ is for room correction/taste, not for building the tone itself.</p>
   </div>
 </section>
 
 <section>
   <h2>File Organization</h2>
   <div class="card">
-    <p><b>Folder structure:</b> <code>Tone Guides/[Artist]/</code></p>
-    <p style="margin-top:10px;"><b>File naming, per song:</b> <code>[Song] — Tone Guide.html</code>, <code>[Song] — Rhythm Tab.pdf</code>, <code>[Song] — Lead Tab.pdf</code>. Tabs are saved manually from Ultimate Guitar using this naming.</p>
-    <p style="margin-top:10px;"><b>Workflow, every time a tone guide is built:</b></p>
-    <ol style="margin-top:6px; padding-left:22px; color:var(--dim);">
-      <li style="margin-bottom:8px;">Before building, confirm which rig: Digital (Kemper Player + FR-10), Clapp 15, or Quilter Aviator Cub — and confirm the guitar and amp choice with reasoning, waiting for confirmation before writing the full guide.</li>
-      <li style="margin-bottom:8px;">Once finished, save to Drive by default.</li>
-      <li style="margin-bottom:8px;">Before saving, ask whether YouTube links should be added — get the actual link(s) from the user rather than searching and picking unilaterally.</li>
-      <li style="margin-bottom:8px;">YouTube links go in the guide's HTML itself, not as separate files.</li>
-      <li>For a song with an existing guide, confirm new build vs. edit/addition before overwriting.</li>
-    </ol>
+    <p style="margin-bottom:10px;">Convention for saving song tone guides to Google Drive (Tone Guides folder).</p>
+    <p class="controls"><b>Folder structure:</b> <code>Tone Guides/[Artist]/</code></p>
+    <p class="controls" style="margin-bottom:6px;"><b>File naming, per song:</b></p>
+    <ul class="filenames">
+      <li><code>[Song] — Tone Guide.html</code></li>
+      <li><code>[Song] — Rhythm Tab.pdf</code></li>
+      <li><code>[Song] — Lead Tab.pdf</code></li>
+    </ul>
+    <p style="margin-top:10px;">Tabs are saved manually from Ultimate Guitar using the filename above — Claude can't reach into the account or rename files after the fact, it just states what to name it on save.</p>
+    <div class="note">
+      <b style="color:var(--amber);">Workflow, every time a tone guide is built:</b>
+      <ol class="workflow" style="margin-top:8px;">
+        <li>Before building, ask which rig to build for — Digital (Kemper Player + FR-10), Clapp 15, or Quilter Aviator Cub. Wait for confirmation, don't assume.</li>
+        <li>Once a guide is finished, save it to Drive by default — no need to ask each time. Say so if a guide shouldn't be saved.</li>
+        <li>Before saving, ask whether YouTube links should be added — get the actual link(s) or search and confirm candidates. Don't guess.</li>
+        <li>YouTube links go in the tone guide HTML itself, not as separate files.</li>
+        <li>For a song with an existing guide, always ask whether this is a new build or an edit/addition before creating a new file or overwriting.</li>
+      </ol>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  This is the canonical gear reference every tone guide in this library is built from.<br>
-  Last confirmed August 2026 — update this page if the collection changes.
+  Rig Reference · guitars, pedals, and amps behind every tone guide<br>
+  Kept in sync with rig-reference.md — update both when gear changes.
 </footer>
 
 </body>
